@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    @apply h-screen bg-slate-100;
+}
+
+.slide-enter {
+    transform: translateX(100%);
+}
+
+.slide-enter-active {
+    transform: translateX(0);
+    transition: transform 200ms ease-in-out;
+}
+.slide-exit {
+    position: absolute;
+    top: 0;
+    transform: translateX(0);
+}
+.slide-exit-active {
+    transform: translateX(-100%);
+    transition: transform 200ms ease-in-out;
+}
+
+.input {
+    @apply block w-full px-3 py-2 border  rounded-md shadow-sm focus:outline-none
+}
+
+.input.normal {
+    @apply border-gray-300 placeholder-gray-400
+}
+
+.input.error {
+    @apply border-red-300 placeholder-red-400 bg-red-100
+}
+
+select[name="sort"] {
+    @apply border-gray-300 rounded-md text-xs;
+    padding: 0.25em 0.5em;
+    padding-right: 2em;
+}
+  
