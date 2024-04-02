@@ -27,19 +27,27 @@ cd instawork
 ```
 
 2. **Setup Frontend Dependencies**
-  Before running the application, ensure the frontend dependencies are installed. Navigate to the `frontend` directory and install the required packages:
+
+Before running the application, ensure the frontend dependencies are installed. Navigate to the `frontend` directory and install the required packages:
 ```bash
 cd frontend
 npm install
 ```
-> After the installation is complete, return to the root directory.
+**Note:** After the installation is complete, return to the root directory.
 <br>
 
 3. **Starting the Application**
+
 With Docker and Docker Compose installed, you can start the application using the following command:
 ```bash
 docker-compose up --build
 ```
+
+4. **Accessing the Application**
+
+After the application has started, you can access the frontend of the application by navigating to [http://localhost:3000](http://localhost:3000) in your web browser.
+
+**Note:** The first time you try to access the application, if it does not load successfully, please refresh the page. This can happen as the frontend is still initializing.
 
 ## API Documentation
 The backend API endpoints are documented using Swagger/OpenAPI. After starting the application, you can access the API documentation at [http://localhost:8000/swagger](http://localhost:8000/swagger/).
