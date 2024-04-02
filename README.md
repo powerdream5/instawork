@@ -10,7 +10,32 @@ The application is structured into three main directories:
 - `frontend/` - Houses the Next.js frontend application, including pages, components, and styles for the user interface.
 - `docker-compose.yml` - Defines the services and volumes that are necessary to run the application in containers, ensuring easy deployment and development.
 
-## Starting the Application
+## Development
+
+### Prerequisites
+
+- Docker and Docker Compose
+- Node.js (version >= 20) for frontend development and execution.
+- Python 3.10 (for backend development)
+  
+### Setup
+
+1. **Clone the Repository**
+```bash
+git clone https://github.com/powerdream5/instawork.git
+cd instawork
+```
+
+2. **Setup Frontend Dependencies**
+  Before running the application, ensure the frontend dependencies are installed. Navigate to the `frontend` directory and install the required packages:
+```bash
+cd frontend
+npm install
+```
+> After the installation is complete, return to the root directory.
+<br>
+
+3. **Starting the Application**
 With Docker and Docker Compose installed, you can start the application using the following command:
 ```bash
 docker-compose up --build
