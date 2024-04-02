@@ -7,7 +7,7 @@ export default function Page() {
   return (
     <TeamMemberProvider>
       <main className="w-full p-0 md:p-8">
-        <div className="container overflow-hidden bg-white mx-auto w-full md:w-1/2 2xl:w-1/3 p-4 md:p-8 relative">
+        <div className="container relative mx-auto w-full overflow-hidden bg-white p-4 md:w-1/2 md:p-8 2xl:w-1/3">
           <TeamMember />
         </div>
       </main>

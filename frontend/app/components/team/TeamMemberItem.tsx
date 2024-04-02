@@ -6,8 +6,7 @@ interface TeamMemberItemProps {
   member: TeamMember;
 }
 
-const TeamMemberItem: React.FC<TeamMemberItemProps> = ({member}) => {
-  
+const TeamMemberItem: React.FC<TeamMemberItemProps> = ({ member }) => {
   const { handleSelectMember } = useTeamMember();
 
   const handleClick = (e: React.SyntheticEvent) => {
@@ -17,21 +16,32 @@ const TeamMemberItem: React.FC<TeamMemberItemProps> = ({member}) => {
 
   return (
     <li key={member.id} className="border-t border-gray-200">
-      <Link href='#' onClick={handleClick} className="flex items-center p-4 hover:bg-gray-100">
-        <div className="rounded-full h-16 w-16 flex items-center justify-center bg-gray-300 text-xl text-white">
-          {member.first_name[0].toUpperCase()}{member.last_name[0].toUpperCase()}
+      <Link
+        href="#"
+        onClick={handleClick}
+        className="flex items-center p-4 hover:bg-gray-100"
+      >
+        <div className="flex h-16 w-16 items-center justify-center rounded-full bg-gray-300 text-xl text-white">
+          {member.first_name[0].toUpperCase()}
+          {member.last_name[0].toUpperCase()}
         </div>
         <div className="ml-4">
-          <div className="text-lg font-semibold inline-flex items-center mb-1">
-            <div>{member.first_name} {member.last_name}</div>
-            {member.role === 'admin' && <span className="ml-2 bg-blue-200 text-blue-800 py-1 px-2 rounded-full text-xs">Admin</span>}
+          <div className="mb-1 inline-flex items-center text-lg font-semibold">
+            <div>
+              {member.first_name} {member.last_name}
+            </div>
+            {member.role === 'admin' && (
+              <span className="ml-2 rounded-full bg-blue-200 px-2 py-1 text-xs text-blue-800">
+                Admin
+              </span>
+            )}
           </div>
-          <p className="text-slate-400 text-sm">{member.phone}</p>
-          <p className="text-slate-400 text-sm">{member.email}</p>
+          <p className="text-sm text-slate-400">{member.phone}</p>
+          <p className="text-sm text-slate-400">{member.email}</p>
         </div>
       </Link>
     </li>
   );
-}
+};
 
 export default TeamMemberItem;

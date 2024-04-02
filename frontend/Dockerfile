@@ -2,7 +2,7 @@
 FROM node:20.10-alpine AS base
 WORKDIR /app
 COPY package.json package-lock.json ./
-COPY next.config.js postcss.config.js tailwind.config.ts ./
+COPY next.config.js postcss.config.js tailwind.config.ts tsconfig.json ./
 COPY app ./app
 COPY public ./public
 
@@ -11,6 +11,10 @@ FROM node:20.10-alpine AS builder
 WORKDIR /app
 COPY --from=base /app .
 RUN npm ci
+
+ARG NEXT_PUBLIC_API_HOST
+ENV NEXT_PUBLIC_API_HOST=${NEXT_PUBLIC_API_HOST}
+
 RUN npm run build
 
 # Stage run

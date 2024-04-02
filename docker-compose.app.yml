@@ -12,13 +12,10 @@ services:
   frontend:
     build: 
       context: ./frontend
-      target: base
       args:
         - NEXT_PUBLIC_API_HOST=http://localhost:8000
-    volumes:
-      - ./frontend:/app
     ports:
       - "3000:3000"
     depends_on:
       - backend
-    entrypoint: [npm, run, dev]
+    entrypoint: [npm, run, start]

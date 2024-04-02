@@ -3,10 +3,12 @@ import { TeamMember } from '../utils/type';
 
 interface TeamMemberContextValue {
   selectedMember: TeamMember | null;
-  handleSelectMember: (member: TeamMember) => void;
+  handleSelectMember: (member: TeamMember | null) => void;
 }
 
-const TeamMemberContext = createContext<TeamMemberContextValue | undefined>(undefined);
+const TeamMemberContext = createContext<TeamMemberContextValue | undefined>(
+  undefined,
+);
 
 export function useTeamMember() {
   const context = useContext(TeamMemberContext);
@@ -20,10 +22,12 @@ interface TeamMemberProviderProps {
   children: ReactNode;
 }
 
-export const TeamMemberProvider: React.FC<TeamMemberProviderProps> = ({ children }) => {
+export const TeamMemberProvider: React.FC<TeamMemberProviderProps> = ({
+  children,
+}) => {
   const [selectedMember, setSelectedMember] = useState<TeamMember | null>(null);
 
-  const handleSelectMember = (member: TeamMember) => {
+  const handleSelectMember = (member: TeamMember | null) => {
     setSelectedMember(member);
   };
 
